@@ -3,12 +3,6 @@ import { RepositoryItem } from "./RepositoryItem";
 
 import "../styles/repositories.scss";
 
-const repository = {
-  name: "unform",
-  description: "Forms in ReactJs",
-  url: "https://github.com/unform/unform",
-};
-
 export function RepositoryList() {
   const [repositories, setRepositories] = useState([]);
 
