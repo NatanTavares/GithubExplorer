@@ -3,16 +3,20 @@ import { RepositoryItem } from "./RepositoryItem";
 
 import "../styles/repositories.scss";
 
+interface Repository {
+  name: string;
+  description: string;
+  html_url: string;
+}
+
 export function RepositoryList() {
-  const [repositories, setRepositories] = useState([]);
+  const [repositories, setRepositories] = useState<Repository[]>([]);
 
   useEffect(() => {
     fetch("https://api.github.com/users/NatanTavares/repos")
       .then((response) => response.json())
       .then((data) => setRepositories(data));
   }, []);
-
-  console.log(repositories);
 
   return (
     <section className="repository-list">
